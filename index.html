@@ -22,7 +22,7 @@
             <iframe id="web" src="start.html"></iframe>
         </section>
 
-        
+
         <section class="col1">
 
          <video id="vid" width="352" controls>
@@ -30,8 +30,6 @@
             <source src="assets/the_new_three_stooges_dinopoodi_512kb.webm" type="video/webm">
             <source src="assets/the_new_three_stooges_dinopoodi.ogv" type="video/ogv">
             <track id="en" kind="captions" label="English (captions)" srclang="en" src="captions/the_new_three_stooges_dinopoodi_512kb.vtt" default>
-
-			<track id="en-challenge" kind="captions" label="Challenge (captions)" srclang="en" src="captions/challenge.vtt">
    
             <!--fallback to text-->
             <h2>The New Three Stooges</h2>
@@ -47,12 +45,6 @@
             <input type="button" id="mute" onclick="muteVid(vid)" value="Mute" />
             <input type="button" id="unmute" onclick="unmuteVid(vid)" value="Unmute" />
 
-            <fieldset>
-                <legend>Chapter Links</legend>
-            <input type="button" id="rewind" onclick="seekVideo(vid, 0)" value="Beginning" />
-            <input type="button" id="end" onclick="seekVideo(vid, 260)" value="End" />
-            <input type="button" id="seek" onclick="seekVideo(vid, 130)" value="Go to the middle" />
-            </fieldset>
         </fieldset>    
         <fieldset>
             <legend>Select a video to watch</legend>
