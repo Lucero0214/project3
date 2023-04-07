@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
+
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Delicious Handrawn', cursive;
+}
+header{
+    background-color: blue;
+    font-size: 2rem;
+    padding: 1.5rem;
+}
+h1,h2{
+    text-align: center;
+    color: red;
+}
+
+#container {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 2fr 1fr;
+    position: relative;
+    margin: auto;
+    max-width: 1024px;
+}
+
+#vid {
+    width: 352px;
+    height: 288px;
+    
+}
+.box {
+    height: 100vh;
+}
+.col1 {
+    border: 2px solid #408e91;
+    height: fit-content;
+}
+
+fieldset {
+    padding: .5rem;
+    margin:.5rem;
+    color: red;
+    background-color: blueviolet;
+}
+legend {
+    background-color: gray;
+    color: white;
+    padding: 5px 10px;
+}
+input {
+    margin: 5px;
+    border-radius: 30%;
+}
+iframe {
+	width:100%;
+	height:65vh;
+}
+#caption {
+    position: absolute;
+    width: 355px;
+    left: 0;
+    margin-top:-3.5em;
+    min-height:3em;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+    text-shadow: black 1px 1px 3px;
+    padding-bottom: .5em;
+    background-color:hsla(250,10%,50%,0.8)
+  }
+  .slowmo {font-size:.7rem;}

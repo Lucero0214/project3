@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <title>Three Stooges</title>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="styles.css" />
+        <script src="js/video_helpers.js" defer></script>
+        <script src="js/transcripts.js" defer></script>
+        <script type="module" src="js/script.js"></script>
+      
+</head>
+<header>Three Stooges</header>
+
+<body>
+    <h1> Three Stooges</h1>
+    <h2>I'm positive about the negative, but a little negative about the positive.</h2>
+
+
+    <main id="container">
+        <section class="col2">
+            <iframe id="web" src="start.html"></iframe>
+        </section>
+
+        
+        <section class="col1">
+
+         <video id="vid" width="352" controls>
+            <source src="assets/the_new_three_stooges_dinopoodi_512kb.mp4" type="video/mp4">
+            <source src="assets/the_new_three_stooges_dinopoodi_512kb.webm" type="video/webm">
+            <source src="assets/the_new_three_stooges_dinopoodi.ogv" type="video/ogv">
+            <track id="en" kind="captions" label="English (captions)" srclang="en" src="captions/the_new_three_stooges_dinopoodi_512kb.vtt" default>
+
+			<track id="en-challenge" kind="captions" label="Challenge (captions)" srclang="en" src="captions/challenge.vtt">
+   
+            <!--fallback to text-->
+            <h2>The New Three Stooges</h2>
+             <p></p>      
+       </video>
+
+<div id="controls">
+    <form id="video_form">
+        <fieldset>
+            <legend>Playback controls</legend>
+            <input type="button" id="play_button" onclick="playVideo(vid)" value="Play" />
+            <input type="button" id="pause_button" onclick="pauseVideo(vid)" value="Pause" />
+            <input type="button" id="mute" onclick="muteVid(vid)" value="Mute" />
+            <input type="button" id="unmute" onclick="unmuteVid(vid)" value="Unmute" />
+
+            <fieldset>
+                <legend>Chapter Links</legend>
+            <input type="button" id="rewind" onclick="seekVideo(vid, 0)" value="Beginning" />
+            <input type="button" id="end" onclick="seekVideo(vid, 260)" value="End" />
+            <input type="button" id="seek" onclick="seekVideo(vid, 130)" value="Go to the middle" />
+            </fieldset>
+        </fieldset>    
+        <fieldset>
+            <legend>Select a video to watch</legend>
+            <select id="video_select">
+                <option>Select the video to play...</option>
+                <option value="assets/the_new_three_stooges_dinopoodi.mp4">the_new_three_stooges_dinopoodi(mp4)</option>
+              </select>
+            </fieldset>
+            <fieldset>
+                <legend>Select a caption/subtitle to read</legend>
+                <select id="text-track">
+                    <option>Select a subtitle language...</option>
+                    <option value="en">English caption</option>
+                    <option value="en-challenge">challenge caption</option>
+                </select>
+
+            </fieldset>
+            <fieldset>
+                <legend>Playback speed</legend>
+                <p class="slowmo">Currently, rewind only works in Safari</p>
+                    <input type=button id="rw" onclick="playRate(vid,-1)" value="&lt; &lt;rewind" />
+                
+                <input type=button id="ff" onclick="playRate(vid,2)" value="fast forward >>" />
+                <input type=button id="slow" onclick="playRate(vid,.5)" value="slow mo >" />
+                <input type=button id="normal" onclick="playRate(vid,1)" value="normal >" />
+        </fieldset>
+    </form>
+
+</div>
+
+<div class="pop hide">
+    <p>Test This!</p>
+</div>
+
+<div class="show-captions">
+    <h3><a id="show-hide" href="#">Show Transcript</a></h3>
+    <a id="transcript-en" href="#">English</a>
+    <div id="transcript"></div>
+</div>
+
+   </section>
+
+
+    </main>
+
+</body>
+</html>
