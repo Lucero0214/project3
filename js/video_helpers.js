@@ -1,65 +1,91 @@
-function selectVideo(e, clip) 
-{
-    clip.src = e.target.value;
-    clip.load();
-    playVideo(clip);
+// Get a handle to the player
+player       = document.getElementById('video-element');
+btnPlayPause = document.getElementById('btnPlayPause');
+btnMute      = document.getElementById('btnMute');
+progressBar  = document.getElementById('progress-bar');
+volumeBar    = document.getElementById('volume-bar');
+
+// Update the video volume
+volumeBar.addEventListener("change", function(evt) {
+    player.volume = evt.target.value;
+});
+
+// Add a listener for the play and pause events so the buttons state can be updated
+player.addEventListener('play', function() {
+    // Change the button to be a pause button
+    changeButtonType(btnPlayPause, 'pause');
+}, false);
+
+player.addEventListener('pause', function() {
+    // Change the button to be a play button
+    changeButtonType(btnPlayPause, 'play');
+}, false);
+
+player.addEventListener('volumechange', function(e) { 
+    // Update the button to be mute/unmute
+    if (player.muted) changeButtonType(btnMute, 'unmute');
+    else changeButtonType(btnMute, 'mute');
+}, false);	
+
+player.addEventListener('ended', function() { this.pause(); }, false);	
+
+progressBar.addEventListener("click", seek);
+
+function seek(e) {
+  var percent = e.offsetX / this.offsetWidth;
+  player.currentTime = percent * player.duration;
+  e.target.value = Math.floor(percent / 100);
+  e.target.innerHTML = progressBar.value + '% played';
 }
 
-function selectTrack(e, clip, id) 
-{
-    if(clip.textTracks.length > 0) {
-        
-        //set all tracks inactive
-        for (let track of clip.textTracks) {
-            track.mode = 'hidden';
-            track.selected = false;
-        }
-
-        //turn on the selected track 
-        const theTrack = clip.textTracks.getTrackById(id);
-        console.log(theTrack);
-        theTrack.selected = true;
-        theTrack.mode = 'showing';
-    }
+function playPauseVideo() {
+  if (player.paused || player.ended) {
+      // Change the button to a pause button
+      changeButtonType(btnPlayPause, 'pause');
+      player.play();
+  }
+  else {
+      // Change the button to a play button
+      changeButtonType(btnPlayPause, 'play');
+      player.pause();
+  }
 }
 
-function playVideo(clip) 
-{
-    clip.play();
+// Stop the current media from playing, and return it to the start position
+function stopVideo() {
+  player.pause();
+  if (player.currentTime) player.currentTime = 0;
 }
 
-function seekVideo(clip, position) 
-{
-    if(!position) position = 0;
-    clip.currentTime = position;
-    clip.play();
+// Toggles the media player's mute and unmute status
+function muteVolume() {
+  if (player.muted) {
+      // Change the button to a mute button
+      changeButtonType(btnMute, 'mute');
+      player.muted = false;
+  }
+  else {
+      // Change the button to an unmute button
+      changeButtonType(btnMute, 'unmute');
+      player.muted = true;
+  }
 }
 
-function pauseVideo(clip) 
-{
-    clip.pause();
+// Replays the media currently loaded in the player
+function replayVideo() {
+  resetPlayer();
+  player.play();
 }
 
-function muteVid(clip) 
-{
-    clip.muted = true;
+// Updates a button's title, innerHTML and CSS class
+function changeButtonType(btn, value) {
+  btn.title     = value;
+  btn.innerHTML = value;
+  btn.className = value;
 }
-
-function unmuteVid(clip) 
-{
-    clip.muted = false;
-}
-
-function onFinished(clip) 
-{
-    clip.currentTime = 0;
-}
-
-// rate can be a positive integer
-// .5 is half speed, 1 is normal speed,
-// 2 is double speed, etc.
-//Only Safari supports negative values (backwards)
-function playRate(clip, rate) 
-{
-    clip.playbackRate = rate;
-}
+function resetPlayer() {
+    // Move the media back to the start
+    player.currentTime = 0;
+    // Set the play/pause button to 'play'
+    changeButtonType(btnPlayPause, 'play');
+}  
