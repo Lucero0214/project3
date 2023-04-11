@@ -18,10 +18,6 @@
 
 
     <main id="container">
-        <section class="col2">
-            <iframe id="web" src="start.html"></iframe>
-        </section>
-
 
         <section class="col1">
 
@@ -46,13 +42,7 @@
             <input type="button" id="unmute" onclick="unmuteVid(vid)" value="Unmute" />
 
         </fieldset>    
-        <fieldset>
-            <legend>Select a video to watch</legend>
-            <select id="video_select">
-                <option>Select the video to play...</option>
-                <option value="assets/the_new_three_stooges_dinopoodi.mp4">the_new_three_stooges_dinopoodi(mp4)</option>
-              </select>
-            </fieldset>
+
             <fieldset>
                 <legend>Select a caption/subtitle to read</legend>
                 <select id="text-track">
@@ -79,13 +69,12 @@
     <p>Test This!</p>
 </div>
 
-<div class="show-captions">
-    <h3><a id="show-hide" href="#">Show Transcript</a></h3>
-    <a id="transcript-en" href="#">English</a>
-    <div id="transcript"></div>
-</div>
 
    </section>
+
+   <section class="col2">
+    <iframe id="web" src="start.html"></iframe>
+</section>
 
 
     </main>

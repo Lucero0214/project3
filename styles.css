@@ -18,16 +18,16 @@ h1,h2{
 }
 
 #container {
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: 2fr 1fr;
-    position: relative;
-    margin: auto;
+    display: block;
     max-width: 1024px;
 }
 
 #vid {
-    width: 352px;
+    display: block;
+    margin:0 auto;
+    padding: auto;
+
+    width: 380px;
     height: 288px;
     
 }
@@ -35,15 +35,12 @@ h1,h2{
     height: 100vh;
 }
 .col1 {
-    border: 2px solid #408e91;
     height: fit-content;
 }
 
 fieldset {
-    padding: .5rem;
-    margin:.5rem;
+    padding: .3rem;
     color: red;
-    background-color: blueviolet;
 }
 legend {
     background-color: gray;
