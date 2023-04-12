@@ -13,15 +13,13 @@
 <header>Three Stooges</header>
 
 <body>
-    <h1> Three Stooges</h1>
+    <img src="hero.png" alt="three stooges characy">
     <h2>I'm positive about the negative, but a little negative about the positive.</h2>
 
 
-    <main id="container">
+  <div id="player">
 
-        <section class="col1">
-
-         <video id="vid" width="352" controls>
+         <video id="video-element" width="352" controls>
             <source src="assets/the_new_three_stooges_dinopoodi_512kb.mp4" type="video/mp4">
             <source src="assets/the_new_three_stooges_dinopoodi_512kb.webm" type="video/webm">
             <source src="assets/the_new_three_stooges_dinopoodi.ogv" type="video/ogv">
@@ -29,44 +27,21 @@
    
             <!--fallback to text-->
             <h2>The New Three Stooges</h2>
-             <p></p>      
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere nesciunt quibusdam accusamus esse obcaecati ipsam qui eaque expedita. Consectetur veniam vitae omnis deleniti? Praesentium repudiandae officiis dicta sed soluta ab.</p>      
        </video>
+       <div id='controls'>
+        <button id='btnReplay' class='replay' title='replay' accesskey="R" onclick='replayVideo();'>Replay</button>	
+        <button id='btnPlayPause' class='play' title='play' accesskey="P" onclick='playPauseVideo();'>Play</button>
+        <button id='btnStop' class='stop' title='stop' accesskey="X" onclick='stopVideo();'>Stop</button>
+    <input type="range" id="volume-bar" title="volume" min="0" max="1" step="0.1" value="1">
+        <button id='btnMute' class='mute' title='mute' onclick='muteVolume();'>Mute</button>	
+    </div>
+</div>	
+<div style="clear:both"></div>
 
-<div id="controls">
-    <form id="video_form">
-        <fieldset>
-            <legend>Playback controls</legend>
-            <input type="button" id="play_button" onclick="playVideo(vid)" value="Play" />
-            <input type="button" id="pause_button" onclick="pauseVideo(vid)" value="Pause" />
-            <input type="button" id="mute" onclick="muteVid(vid)" value="Mute" />
-            <input type="button" id="unmute" onclick="unmuteVid(vid)" value="Unmute" />
 
-        </fieldset>    
-
-            <fieldset>
-                <legend>Select a caption/subtitle to read</legend>
-                <select id="text-track">
-                    <option>Select a subtitle language...</option>
-                    <option value="en">English caption</option>
-                    <option value="en-challenge">challenge caption</option>
-                </select>
-
-            </fieldset>
-            <fieldset>
-                <legend>Playback speed</legend>
-                <p class="slowmo">Currently, rewind only works in Safari</p>
-                    <input type=button id="rw" onclick="playRate(vid,-1)" value="&lt; &lt;rewind" />
-                
-                <input type=button id="ff" onclick="playRate(vid,2)" value="fast forward >>" />
-                <input type=button id="slow" onclick="playRate(vid,.5)" value="slow mo >" />
-                <input type=button id="normal" onclick="playRate(vid,1)" value="normal >" />
-        </fieldset>
-    </form>
-
-</div>
 
 <div class="pop hide">
-    <p>Test This!</p>
 </div>
 
 
@@ -76,8 +51,6 @@
     <iframe id="web" src="start.html"></iframe>
 </section>
 
-
-    </main>
 
 </body>
 </html>
