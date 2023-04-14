@@ -10,8 +10,9 @@ function init() {
         { seconds: 40, callback: func2 },
         { seconds: 80, callback: func3 },
         { seconds: 110, callback: func4 },
-        { seconds: 160, callback: func5 },
-        { seconds: 200, callback: func6 },
+        { seconds: 111, callback: func5 },
+        { seconds: 160, callback: func6 },
+        { seconds: 200, callback: func7 }
     ];
 
     // setup the cuepoint timer
@@ -41,8 +42,9 @@ function init() {
                 { seconds: 40, callback: func2 },
                 { seconds: 80, callback: func3 },
                 { seconds: 110, callback: func4 },
-                { seconds: 160, callback: func5 },
-                { seconds: 200, callback: func6 },
+                { seconds: 111, callback: func5 },
+                { seconds: 160, callback: func6 },
+                { seconds: 200, callback: func7 }
             ];
             // recreate the cue timer
             cueTimer.setup("video-element", myCues);
@@ -70,18 +72,17 @@ function init() {
             e.preventDefault();
             webvttTranscript("captions/the_new_three_stooges_dinopoodi_512kb.vtt", display);
         });
-
-
 //the custom callback functions to trigger when a cuepoint is hit.
 //You can code up whatever behavior you need in your own callbacks
 
 function func1() {
-    document.querySelector("#video-element").style.backgroundColor = "purple";
+   document.querySelector("#video-element").style.background = "white"; 
+   document.querySelector("#logo").classList.add("floating");
 }
 
 function func2() {
     let pop = document.querySelector(".pop");
-    pop.innerHTML = "<p>Well being as there's no other place around the place, I reckon this must be the place, I reckon.</p>";
+    pop.innerHTML = "<h2>Well being as there's no other place around the place, I reckon this must be the place, I reckon.</h2>";
     document.querySelector(".pop").classList.toggle("hide");
     setTimeout(() => {
         document.querySelector(".pop").classList.toggle("hide");
@@ -90,23 +91,29 @@ function func2() {
 
 function func3() {
     const pop = document.querySelector(".pop");
-    pop.innerHTML = "<p>If at first you don't succeed, keep on sucking till you do succeed.</p>";
+    pop.innerHTML = "<h2>If at first you don't succeed, keep on sucking till you do succeed.</h2>";
     pop.classList.toggle("hide");
     setTimeout(() => {
         document.querySelector(".pop").classList.toggle("hide");
     }, 2000);
 }
-
 function func4() {  
-    document.querySelector("#web").src = "images/stooges.jpg";
+     document.querySelector("#photo").classList.add('rotation');
 }
+   
+function func5() {  
+    document.querySelector("#photo2").classList.add('rotation');
+}
+//function func4() {  
+ //   document.querySelector("#web").src = "images/stooges.jpg";
 
-function func5() {
+
+function func6() {
     document.querySelector("#web").src =
         "https://www.threestooges.com";
 }
 
-function func6() {
+function func7() {
     document.querySelector("#web").src =
         "https://en.wikipedia.org/wiki/The_Three_Stooges";
 }

@@ -13,39 +13,34 @@
 <header>Three Stooges</header>
 
 <body>
-    <img src="hero.png" alt="three stooges characy">
+   
+    <img id="logo" src="images/hero.png" alt="three stooges character">
+
     <h2>I'm positive about the negative, but a little negative about the positive.</h2>
-
-
+<div id="container"></div>
+<img id="photo" src="images/circle.png" alt="three cartoon stooges">
+<img id="photo2" src="images/circle.png" alt="three cartoon stooges">
   <div id="player">
-
          <video id="video-element" width="352" controls>
             <source src="assets/the_new_three_stooges_dinopoodi_512kb.mp4" type="video/mp4">
             <source src="assets/the_new_three_stooges_dinopoodi_512kb.webm" type="video/webm">
             <source src="assets/the_new_three_stooges_dinopoodi.ogv" type="video/ogv">
             <track id="en" kind="captions" label="English (captions)" srclang="en" src="captions/the_new_three_stooges_dinopoodi_512kb.vtt" default>
-   
-            <!--fallback to text-->
-            <h2>The New Three Stooges</h2>
-             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere nesciunt quibusdam accusamus esse obcaecati ipsam qui eaque expedita. Consectetur veniam vitae omnis deleniti? Praesentium repudiandae officiis dicta sed soluta ab.</p>      
        </video>
+    
        <div id='controls'>
         <button id='btnReplay' class='replay' title='replay' accesskey="R" onclick='replayVideo();'>Replay</button>	
         <button id='btnPlayPause' class='play' title='play' accesskey="P" onclick='playPauseVideo();'>Play</button>
         <button id='btnStop' class='stop' title='stop' accesskey="X" onclick='stopVideo();'>Stop</button>
     <input type="range" id="volume-bar" title="volume" min="0" max="1" step="0.1" value="1">
         <button id='btnMute' class='mute' title='mute' onclick='muteVolume();'>Mute</button>	
-    </div>
+       </div>
 </div>	
+</div>
 <div style="clear:both"></div>
-
-
 
 <div class="pop hide">
 </div>
-
-
-   </section>
 
    <section class="col2">
     <iframe id="web" src="start.html"></iframe>
