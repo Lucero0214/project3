@@ -8,52 +8,148 @@ body {
     font-family: 'Delicious Handrawn', cursive;
 }
 header{
-    background-color: blue;
+    background-color: black;
+    color: #ec9f05;
     font-size: 2rem;
     padding: 1.5rem;
 }
-h1,h2{
+h1{
     text-align: center;
-    color: red;
-}
-
-#container {
-    display: block;
-    max-width: 1024px;
-}
-
-#vid {
-    display: block;
-    margin:0 auto;
-    padding: auto;
-
-    width: 380px;
-    height: 288px;
-    
-}
-.box {
-    height: 100vh;
-}
-.col1 {
-    height: fit-content;
-}
-
-fieldset {
-    padding: .3rem;
-    color: red;
-}
-legend {
-    background-color: gray;
     color: white;
-    padding: 5px 10px;
 }
-input {
-    margin: 5px;
-    border-radius: 30%;
+h2{
+    text-align: center;
+    color: orange;
 }
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 18pt;
+}
+#logo{
+    display: block;
+    margin: auto;
+    padding: 2rem;
+}
+.floating{
+    display: block;
+    margin: 0 auto;
+    padding: 2rem;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: 5;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 50px); }
+    100%   { transform: translate(0, -0px); }   
+}
+
+#photo{
+    float: left;
+    display: block;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 75%;
+}
+.rotation{
+    display: block;
+    margin: 0 auto;
+    padding: 2rem;
+    animation: rotation 2s 10 linear;
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+  #photo2{
+    float: right;
+    display: block;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 75%;
+}
+.rotation{
+    display: block;
+    margin: 0 auto;
+    padding: 2rem;
+    animation: rotation 2s 10 linear;
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+#player {
+    float: center;
+    margin: auto;
+    margin-bottom: 3rem;
+    width: 500px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: #6a040f;
+    border:2px solid #ffba08;
+    border-radius: 9px;
+}
+  
+#controls {
+    border: 3px solid #370617;
+    width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 5px;
+    padding-top: 10px;
+    padding-bottom: 3px;
+    border-radius: 7px;
+  }
+
+
+video {
+        display: block;
+        margin: auto;
+        padding: .3rem;
+    	width:420px;
+    	height:231px;
+        background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+}
+
+button {
+    text-indent:-9999px;
+    width:16px;
+    height:16px;
+    border:none;
+    cursor:pointer;
+    background:transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJEAAAAQCAYAAAAWNJ1eAAAAB3RJTUUH4AMQDS0aGLmsqwAAAAlwSFlzAAAOdAAADnQBaySz1gAAAvZJREFUeNrtmk2u0zAQxyele7gBZcOWcAJ8AKTXFVvKhnW5QbhBD4BEe4GnvgULdkaCNeUE5N2gbJGgeDJ26rhO4rFbKRX5P7mtP+YX2x1PHPdl4ErCa/W6UEmc1ACsVekGQjWyeKwrVWYN+bF63aqU99jsVJqryblvbTGyeKxrkoSPesxC/f3CosyaEBzso0DUvgL5JmZk8VhdoihXKLsnLLtLsYix1jkcf+VIU12wZUwI6LZo89xTN7J4rFOZLxxgxrjG+Vm0WNB27hlvXrWQICb6Im5IXqhU9lwi17Zuh13WS2juF/Dzq0TWW+tzLMvuj2ip47J480W8G5V+qnSwStfg+9KxDbW98V6Bw+qThGdA0WYBPQtmohu507rRYQ/ryg77RU8e9Vmlb1b+q0q3iawPqn+fEllmrF+qlDbGUDVtyRkwQs0YjFll4zpSHMsvikASyHnwVlwALbSV1aq+nU2gfRWGOJPoyaNw33VwyqYDYIXqkqwV0x5vK7sWWy6rSwUcHQgd5b1ebO+AIlvtQNh4GoSkx9RN5P0Vr/HbKTsw7P0sWT9ZxrBET5lMZNnqYs2Yvb7TNF/E4bGkM2/CelInZ0WtVPkPp90bZfvQOBAqzInS9MdTFutE52H5bl92mUxk2eKwhiOzB/L33nIgVJgTpT0tZE7+AcQ70XlY9ioU9TFHXJ9i7UglcOaU9j2FZRvPEidzyR33C9BONoGutYLOg7v99h2+7Mn79Bf8X3w4S9T26ayQ6boca8m0tw83l4msLu31u+hoY+r26ERrz1D7nMdo3ZNHPQWKGEa5LotnySrcThNZobocC/c4tP8oGYwS6AT87gysNm31+1I/6jdFZcZptyaUfwf+2cdOdfz08Gxk8VhNLm1Y3e1DzK0nhdU8kceotIJjFBVADmTq8omumMMxhIVoD8cdvKuRxWMdZTas4ed0l2HRzzNC9xudpQByIgmnj//34w+wQ2ANVf6fPfZ63IUZU+YxHOa/SfwPrCvVP/2nY6KBhDUMAAAAAElFTkSuQmCC') no-repeat 0 0; /* url('buttons.png') */
+}
+
+.pause { background-position:-19px 0; }
+.stop { background-position:-38px 0; }
+
+#volume-bar {
+    width: 50px;
+    vertical-align: middle;
+    padding:0px;
+}
+.mute { background-position:-95px 0; }
+.unmute { background-position:-114px 0; }
+.replay { background-position:-133px 0; }
+
+
 iframe {
 	width:100%;
-	height:65vh;
+    height: 400px;
+    text-align: center;
+    background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
 }
 #caption {
     position: absolute;
@@ -69,4 +165,3 @@ iframe {
     padding-bottom: .5em;
     background-color:hsla(250,10%,50%,0.8)
   }
-  .slowmo {font-size:.7rem;}
