@@ -2,7 +2,6 @@
 player       = document.getElementById('video-element');
 btnPlayPause = document.getElementById('btnPlayPause');
 btnMute      = document.getElementById('btnMute');
-progressBar  = document.getElementById('progress-bar');
 volumeBar    = document.getElementById('volume-bar');
 
 // Update the video volume
@@ -27,16 +26,6 @@ player.addEventListener('volumechange', function(e) {
     else changeButtonType(btnMute, 'mute');
 }, false);	
 
-player.addEventListener('ended', function() { this.pause(); }, false);	
-
-progressBar.addEventListener("click", seek);
-
-function seek(e) {
-  var percent = e.offsetX / this.offsetWidth;
-  player.currentTime = percent * player.duration;
-  e.target.value = Math.floor(percent / 100);
-  e.target.innerHTML = progressBar.value + '% played';
-}
 
 function playPauseVideo() {
   if (player.paused || player.ended) {

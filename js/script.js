@@ -20,10 +20,7 @@ function init() {
 
     // create shortcut variables
     const video = document.querySelector("#video");
-    const selectVid = document.querySelector("#video_select");
     const selectTxt = document.querySelector("#text-track");
-    const display = document.getElementById("transcript");
-    const transcript_en = document.getElementById("transcript-en");0
     const showHide = document.getElementById("show-hide");
 
     // initialize video select dropdown behavior
@@ -49,29 +46,12 @@ function init() {
             // recreate the cue timer
             cueTimer.setup("video-element", myCues);
 
-        } else if(e.target.value == 'assets/the_new_three_stooges_dinopoodi.mp4') {
-            // if bunny video, empty the myCues array
-            // and change the caption texts
-            myCues.splice(0, myCues.length);
-            selectTrack(null, video, 'en-stooges');
-        }
-        // finally, swap the video to play
-        selectVideo(e, video);
-    });
-
+        } 
     // initialize video captions dropdown behavior
     selectTxt.addEventListener("change", (e) => {
         const id = e.target.value;
         selectTrack(e, video-element, id);
     });
-
-    // initialize text transcript display (english)
-    transcript_en.addEventListener(
-        "click",
-        function (e) {
-            e.preventDefault();
-            webvttTranscript("captions/the_new_three_stooges_dinopoodi_512kb.vtt", display);
-        });
 //the custom callback functions to trigger when a cuepoint is hit.
 //You can code up whatever behavior you need in your own callbacks
 
@@ -116,5 +96,4 @@ function func6() {
 function func7() {
     document.querySelector("#web").src =
         "https://en.wikipedia.org/wiki/The_Three_Stooges";
-}
-}
+    }
