@@ -22,36 +22,9 @@ function init() {
     const video = document.querySelector("#video");
     const selectTxt = document.querySelector("#text-track");
     const showHide = document.getElementById("show-hide");
-
-    // initialize video select dropdown behavior
-    selectVideo-element.addEventListener("change", (e) => {
  
-        // depending on which video is selected, change the cues
-        // and change the captions.
-        if (e.target.value == 'assets/the_new_three_stooges_dinopoodi_514.mp4') {
-            
-            // choose the english caption text
-            selectTrack(null, video-element, 'en');
+    }
 
-            // reset the cues playlist
-            myCues = [
-                { seconds: 20, callback: func1 },
-                { seconds: 40, callback: func2 },
-                { seconds: 80, callback: func3 },
-                { seconds: 110, callback: func4 },
-                { seconds: 111, callback: func5 },
-                { seconds: 160, callback: func6 },
-                { seconds: 200, callback: func7 }
-            ];
-            // recreate the cue timer
-            cueTimer.setup("video-element", myCues);
-
-        } 
-    // initialize video captions dropdown behavior
-    selectTxt.addEventListener("change", (e) => {
-        const id = e.target.value;
-        selectTrack(e, video-element, id);
-    });
 //the custom callback functions to trigger when a cuepoint is hit.
 //You can code up whatever behavior you need in your own callbacks
 
@@ -84,10 +57,6 @@ function func4() {
 function func5() {  
     document.querySelector("#photo2").classList.add('rotation');
 }
-//function func4() {  
- //   document.querySelector("#web").src = "images/stooges.jpg";
-
-
 function func6() {
     document.querySelector("#web").src =
         "https://www.threestooges.com";
@@ -96,4 +65,4 @@ function func6() {
 function func7() {
     document.querySelector("#web").src =
         "https://en.wikipedia.org/wiki/The_Three_Stooges";
-    }
+}
